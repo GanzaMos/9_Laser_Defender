@@ -10,7 +10,6 @@ public class PathWaypoint : MonoBehaviour
         foreach (Transform child in transform)
         {
             waypoints.Add(child);
-            Debug.Log(child.name);
         }
     }
 }
