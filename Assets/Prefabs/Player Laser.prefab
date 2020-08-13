@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 2695901302814133348}
   - component: {fileID: 7737378156661660126}
   - component: {fileID: -277130665028500941}
-  m_Layer: 0
-  m_Name: laserBullet1
+  m_Layer: 9
+  m_Name: Player Laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,7 +113,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1104123762421070675}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1

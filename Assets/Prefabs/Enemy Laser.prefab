@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 7389732506200662786}
   - component: {fileID: 1011908062418477055}
   - component: {fileID: 8619092726976639401}
-  - component: {fileID: 246982414504899527}
-  m_Layer: 0
+  - component: {fileID: 1864002820060428933}
+  - component: {fileID: 3780817190261007831}
+  m_Layer: 11
   m_Name: Enemy Laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1a935c7a33497f649bf56924f19da8fb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6ffd008a85eac72489d606fb8d57ea13, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -105,8 +106,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &246982414504899527
-BoxCollider2D:
+--- !u!70 &1864002820060428933
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -119,15 +120,18 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.09, y: 0.37}
-    newSize: {x: 0.09, y: 0.37}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.09, y: 0.37}
-  m_EdgeRadius: 0
+  m_Size: {x: 0.12, y: 0.49333334}
+  m_Direction: 0
+--- !u!114 &3780817190261007831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4617014518723808646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16acd9f2f38163d40a03f406de285e2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damagePerHit: 100

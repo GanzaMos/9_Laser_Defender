@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class Player : MonoBehaviour
 {
-    
+    [SerializeField] private int playerHealth = 500;
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] private float padding = 0.25f;
     [SerializeField] private GameObject laserBullet1;
@@ -64,6 +64,20 @@ public class Player : MonoBehaviour
         xMax = gameCamera.ViewportToWorldPoint(new Vector3(1, 0, 0)).x - padding;
         yMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).y + padding;
         yMax = gameCamera.ViewportToWorldPoint(new Vector3(0, 1, 0)).y - padding;
+    }
+    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.GetComponent<DamageDealer>())
+        {
+            DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
+            playerHealth -= damageDealer.GetDamageAmount();
+            Destroy(other.gameObject);
+            if (playerHealth <= 0)
+            {
+                Destroy(gameObject);
+            }
+        };
     }
 
 }
