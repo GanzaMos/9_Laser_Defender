@@ -157,6 +157,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c752a4b38aa674e43b8da05b86fe6d5d, type: 2}
   - {fileID: 11400000, guid: 8602ea9d77445904ba624ad3ea907d8f, type: 2}
   - {fileID: 11400000, guid: 00973c08046ced149a44681bd7d32c87, type: 2}
+  looping: 0
 --- !u!4 &1002602279
 Transform:
   m_ObjectHideFlags: 0
@@ -484,6 +485,10 @@ PrefabInstance:
       propertyPath: laserBullet1
       value: 
       objectReference: {fileID: 1104123762421070675, guid: 2969c22c675a88c4aab7032cd5d2eb2e, type: 3}
+    - target: {fileID: 8537810886044780535, guid: 7ec258771bd57ca4aad29f06c04a2223, type: 3}
+      propertyPath: weaponReloadTime
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ec258771bd57ca4aad29f06c04a2223, type: 3}
 --- !u!1001 &3532948231227933743
