@@ -8,7 +8,7 @@ using Random = UnityEngine.Random;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private int enemyHealth = 200;
-    
+    [SerializeField] private ParticleSystem _deathVFX;
     [SerializeField] private GameObject laser;
     [SerializeField] float bulletSpeed = 20f;
     [SerializeField] private float minReloadTime = 0.5f;
@@ -45,6 +45,7 @@ public class Enemy : MonoBehaviour
             Destroy(other.gameObject);
             if (enemyHealth <= 0)
             {
+                Instantiate(_deathVFX, transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
         };
