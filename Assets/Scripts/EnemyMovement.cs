@@ -4,20 +4,19 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] WaveScript _waveScript;
-    [SerializeField] float moveSpeed = 2f;
-    
-    public List<Transform> waypoints;
-    private Rigidbody2D _rigidbody2D;
+    WaveScript _waveScript;
+    float moveSpeed;
+    List<Transform> waypoints;
     private int waypointIndex = 0;
-    
-    void Start()
+
+    public void SetWaveConfig(WaveScript waveScript)
     {
-        waypoints = _waveScript.GetWaypoints();
+        _waveScript = waveScript;
+        moveSpeed = waveScript.GetEnemiesSpeed();
+        waypoints = waveScript.GetWaypoints();
         transform.position = waypoints[waypointIndex].position;
-        _rigidbody2D = GetComponent<Rigidbody2D>();
     }
-    
+
     void Update()
     {
         if (waypointIndex <= waypoints.Count - 1)

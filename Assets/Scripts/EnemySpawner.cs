@@ -9,18 +9,26 @@ public class EnemySpawner : MonoBehaviour
     private int startWave = 0;
     void Start()
     {
-        var currentWave = _waveScripts[startWave];
-        StartCoroutine(SpawnAllEnemiesOfTheWave(currentWave));
+        StartCoroutine(SpawnAllWaves());
+    }
+
+    IEnumerator SpawnAllWaves()
+    {
+        for (int currentWave = startWave; currentWave < _waveScripts.Count; currentWave++)
+        {
+            yield return StartCoroutine(SpawnAllEnemiesOfTheWave(_waveScripts[currentWave]));
+        }
     }
 
     IEnumerator SpawnAllEnemiesOfTheWave(WaveScript waveScript)
     {
         for (int i = 0; i < waveScript.GetNumberOfEnemies(); i++)
         {
-            Instantiate(
+            var enemy = Instantiate(
                 waveScript.GetEnemyPrefab(),
                 waveScript.GetWaypoints()[0].position,
                 Quaternion.identity);
+            enemy.GetComponent<EnemyMovement>().SetWaveConfig(waveScript);
             yield return new WaitForSeconds(waveScript.GetTimeBetweenSpawns());
         }
     }
